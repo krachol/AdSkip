@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class Skipad {
     @RequestMapping(method = RequestMethod.GET)public String printHello(ModelMap model) {
-        model.addAttribute("message", "Hello AdSkip!! ");
+        model.addAttribute("message", "Hello AdSkip!");
         return "hello";
     }
 }
