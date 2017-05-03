@@ -10,6 +10,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
 
+  resolve: {
+    alias: {
+      layout: path.resolve(__dirname, 'src/layout'),
+      ui: path.resolve(__dirname, 'src/ui'),
+    },
+  },
+
   module: {
     rules: [
       {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import style from './Main.scss';
 
-console.log({ style });
+import Button from 'ui/Button';
+import style from './Main.scss';
 
 export default class Main extends Component {
   render() {
@@ -10,6 +10,7 @@ export default class Main extends Component {
         <h1 className={style['Main__heading']}>Ad Skip</h1>
         <main>
           Running on <a href="https://reactjs.org">React.js</a>
+          <Button>Hello</Button>
         </main>
       </div>
     );
