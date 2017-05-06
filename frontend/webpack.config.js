@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -8,12 +9,15 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: path.resolve(__dirname, 'dist/assets'),
   },
 
   resolve: {
     alias: {
       layout: path.resolve(__dirname, 'src/layout'),
       ui: path.resolve(__dirname, 'src/ui'),
+      styles: path.resolve(__dirname, 'src/styles'),
+      public: path.resolve(__dirname, 'public'),
     },
   },
 
@@ -37,17 +41,32 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: { modules: true, sourceMap: true },
+            options: {
+              modules: true,
+              sourceMap: true,
+              alias: {
+                fonts: path.resolve(__dirname, 'public/fonts'),
+              },
+            },
           },
           {
             loader: 'sass-loader',
           },
         ],
       },
+      {
+        test: /\.(ttf)$/,
+        loader: 'file-loader',
+        exclude: /node_modules/,
+        query: {
+          name: '[name].[ext]',
+        },
+      },
     ],
   },
 
   plugins: [
+    new DashboardPlugin(),
     new HtmlPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.html'),
