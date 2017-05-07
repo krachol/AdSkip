@@ -6,6 +6,7 @@
     "dist": true
   },
   "path-intellisense.mappings": {
-    "ui": "${workspaceRoot}/src/ui"
+    "ui": "${workspaceRoot}/src/ui",
+    "layout": "${workspaceRoot}/src/layout"
   }
 }
