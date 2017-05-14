@@ -1,0 +1,11 @@
+@import "~styles/reset";
+@import "~styles/colors";
+// @import "~styles/fonts";
+
+:global {
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: $white;
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,30 @@
+@import "~styles/colors"; 
+
+.btn {
+  outline: 1px;
+  padding: 8px 20px;
+  font-size: 16px;
+  transition: .1s background-color ease-in-out;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+
+  &.primary {
+    color: $white;
+    background: $primary-color;
+
+    &:hover {
+      background: $primary-dark-color;
+    }
+  }
+
+  &.secondary {
+    color: white;
+    background: $dark;
+  }
+
+  &.error {
+    color: white;
+    background: red;
+  }
+}
