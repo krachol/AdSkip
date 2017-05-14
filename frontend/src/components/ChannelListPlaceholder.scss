@@ -1,0 +1,9 @@
+@import "~styles/mixins";
+
+.channel-list-placeholder {
+  @include main-font(0.8em);
+  color: gray;
+  width: 100%;
+  text-align: center;
+  margin: 10px 0 0;
+}

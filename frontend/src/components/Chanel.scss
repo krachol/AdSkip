@@ -1,14 +1,16 @@
-.Channel__list-element {
+@import "~styles/colors";
+
+.channel-list-element {
   display: flex;
   width: 100%;
   padding: 10px 0;
   justify-content: space-between;
 
   .status {
-    color: red;
+    color: $error-color;
 
     &.active {
-      color: green;
+      color: $success-color;
     }
   }
 }

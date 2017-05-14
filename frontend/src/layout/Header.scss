@@ -1,13 +1,13 @@
 @import "~styles/colors";
 
-.AppHeader {
+.app-header {
   width: 100%;
   height: 60px;
   display: flex;
   padding: 10px 20px;
   box-sizing: border-box;
-  background: $medium-dark;
-  color: $white;
+  background: $primary-color;
+  color: $primary-color-text;
   align-items: center;
   margin: 0 0 15px;
 }

@@ -1,35 +1,38 @@
 import React, { Component } from 'react';
+import { ChannelPropTypes } from '../data/channel';
+import { func, string } from 'prop-types';
 
 import styles from './ChannelList.scss';
 import Channel from './Channel';
+import ChannelListPlaceholder from './ChannelListPlaceholder';
 
 export default class ChannelList extends Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    channels: ChannelPropTypes.list.isRequired,
+    onWatchStateChange: func.isRequired,
+    placeholder: string,
+    title: string.isRequired,
+  };
 
-    this.state = {
-      channels: [
-        { id: 'polsat', name: 'Polsat', ads: false },
-        { id: 'tvn', name: 'TVN', ads: true },
-        { id: 'tvp1', name: 'TVP 1', ads: false },
-        { id: 'tvp2', name: 'TVP 2', ads: false },
-        { id: 'canalplus', name: 'Canal+', ads: false },
-      ],
-    };
-  }
+  static defaultProps = {
+    placeholder: null,
+  };
 
   renderChannels(channels) {
     return channels.map(channel => {
-      return <Channel key={channel.id} name={channel.name} ads={channel.ads} />;
+      return <Channel key={channel.id} {...channel} />;
     });
   }
 
   render() {
     return (
-      <div className={styles['ChannelList']}>
-        <h1>Kanały</h1>
-        <ul className={styles['ChannelList__list']}>
-          {this.renderChannels(this.state.channels)}
+      <div className={styles['channel-list-container']}>
+        <h1>{this.props.title}</h1>
+        <ul className={styles['channel-list']}>
+          {this.renderChannels(this.props.channels)}
+          <ChannelListPlaceholder active={this.props.channels.length === 0}>
+            {this.props.placeholder}
+          </ChannelListPlaceholder>
         </ul>
       </div>
     );

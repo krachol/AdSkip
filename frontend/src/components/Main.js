@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Header from 'layout/Header';
 import Content from 'layout/Content';
-import ChannelList from './ChannelList';
+import ChannelContainer from '../containers/ChannelContainer';
 
 export default class Main extends Component {
   render() {
@@ -10,7 +10,7 @@ export default class Main extends Component {
       <div>
         <Header />
         <Content>
-          <ChannelList />
+          <ChannelContainer />
         </Content>
       </div>
     );
