@@ -1,7 +1,10 @@
-.ChannelList {
-  padding: 0 15px;
+@import "~styles/colors";
+@import "~styles/mixins";
+
+.channel-list-container {
+  background: white;
+  padding: 25px 20px;
   margin: 0 auto;
-  max-width: 700px;
   display: flex;
   flex-direction: column;
   align-content: stretch;
@@ -15,7 +18,7 @@
   }
 }
 
-.ChannelList__list {
+.channel-list {
   list-style: none;
   margin: 0;
   padding: 0;

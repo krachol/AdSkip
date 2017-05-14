@@ -19,23 +19,10 @@
 //   font-style: normal;
 // }
 
-// @font-face {
-//   font-family: 'Merriweather';
-//   src: url('~public/fonts/Merriweather-Regular.ttf') format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-// }
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-// @font-face {
-//   font-family: 'Merriweather';
-//   src: url('~public/fonts/Merriweather-Bold.ttf') format('truetype');
-//   font-weight: 700;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: 'Merriweather';
-//   src: url('~public/fonts/Merriweather-Light.ttf') format('truetype');
-//   font-weight: 200;
-//   font-style: normal;
-// }
+$x-small-font-size: 10px;
+$small-font-size: 12px;
+$medium-font-size: 16px;
+$large-font-size: 22px;
+$x-large-font-size: 32px;

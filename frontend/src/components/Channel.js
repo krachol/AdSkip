@@ -1,26 +1,36 @@
 import React from 'react';
-import classNames from 'classnames';
-import { string, bool } from 'prop-types';
+import { ChannelStatus, ChannelPropTypes } from '../data/channel';
+import { func } from 'prop-types';
+
 import styles from './Chanel.scss';
+import ChannelStatusIndicator from './ChannelStatusIndicator';
+import ChannelStatusVoteSwitch from './ChannelStatusVoteSwitch';
+import ChannelWatchSwitch from './ChannelWatchSwitch';
 
 export default function Channel(props) {
-  const statusClassName = classNames(styles['status'], {
-    [styles['active']]: !props.ads,
-  });
-
   return (
-    <li className={styles['Channel__list-element']}>
-      <div className={styles['Channel__name']}>
-        {props.name}
+    <li className={styles['channel-list-element']}>
+      <div className={styles['description-container']}>
+        <ChannelWatchSwitch
+          isWatched={props.watched}
+          onWatchStateChange={props.onWatchStateChange}
+        />
+        <span className={styles['name']}>{props.name}</span>
+        <span className={styles['program']}>{props.program}</span>
       </div>
-      <div className={statusClassName}>
-        {props.ads ? 'Reklamy' : 'Film'}
+      <div className={styles['status-indicator-container']}>
+        <ChannelStatusIndicator status={props.status} />
       </div>
+      <ChannelStatusVoteSwitch className={styles['vote-switch-container']} />
     </li>
   );
 }
 
 Channel.propTypes = {
-  name: string.isRequired,
-  ads: bool.isRequired,
+  id: ChannelPropTypes.id.isRequired,
+  name: ChannelPropTypes.name.isRequired,
+  status: ChannelPropTypes.status.isRequired,
+  program: ChannelPropTypes.program.isRequired,
+  watched: ChannelPropTypes.watched.isRequired,
+  onWatchStateChange: func.isRequired,
 };

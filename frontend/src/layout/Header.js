@@ -3,7 +3,7 @@ import styles from './Header.scss';
 
 export default function Header() {
   return (
-    <header className={styles['AppHeader']}>
+    <header className={styles['app-header']}>
       <h1>AdSkip</h1>
     </header>
   );
