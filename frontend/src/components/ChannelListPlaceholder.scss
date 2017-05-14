@@ -1,8 +1,9 @@
-@import "~styles/mixins";
+@import "~styles/fonts";
+@import "~styles/colors";
 
 .channel-list-placeholder {
-  @include main-font(0.8em);
-  color: gray;
+  font-size: 0.8rem;
+  color: $secondary-text-color;
   width: 100%;
   text-align: center;
   margin: 10px 0 0;

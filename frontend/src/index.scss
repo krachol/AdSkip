@@ -5,7 +5,8 @@
 
 :global {
   body {
-    @include main-font(20px);
+    font-family: 'Lato', -apple-system, Helvetica, Arial, sans-serif;
+    font-size: $medium-font-size;
     background: $background-color;
     color: $primary-text-color;
   }

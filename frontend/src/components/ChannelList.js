@@ -20,7 +20,17 @@ export default class ChannelList extends Component {
 
   renderChannels(channels) {
     return channels.map(channel => {
-      return <Channel key={channel.id} {...channel} />;
+      const onWatchStateChange = () => {
+        this.props.onWatchStateChange(channel.id);
+      };
+
+      return (
+        <Channel
+          key={channel.id}
+          onWatchStateChange={onWatchStateChange}
+          {...channel}
+        />
+      );
     });
   }
 

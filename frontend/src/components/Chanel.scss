@@ -1,16 +1,44 @@
 @import "~styles/colors";
+@import "~styles/fonts";
 
 .channel-list-element {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   padding: 10px 0;
-  justify-content: space-between;
+}
 
-  .status {
-    color: $error-color;
+.name {
+  font-weight: bold;
+}
 
-    &.active {
-      color: $success-color;
-    }
+.program {
+  font-size: $small-font-size;
+  margin-left: 10px;
+  color: $secondary-text-color;
+}
+
+.status {
+  color: $error-color;
+
+  &.active {
+    color: $success-color;
   }
+}
+
+.description-container,
+.status-indicator-container {
+  flex: 1 1 auto;
+  width: 50%;
+}
+
+.status-indicator-container {
+  text-align: right;
+}
+
+.vote-switch-container {
+  flex: 1 1 auto;
+  width: 100%;
+  margin-top: 5px;
 }
