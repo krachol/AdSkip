@@ -1,0 +1,11 @@
+@mixin main-font($size: 12px, $weight: normal) {
+  font-family: 'Lato', -apple-system, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin text-font($size: 12px, $weight: normal) {
+  font-family: 'Merriweather', serif;
+  font-size: $size;
+  font-weight: $weight;
+}

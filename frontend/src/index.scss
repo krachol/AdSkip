@@ -1,11 +1,12 @@
+@import "~styles/fonts";
+@import "~styles/mixins";
 @import "~styles/reset";
 @import "~styles/colors";
-// @import "~styles/fonts";
 
 :global {
   body {
-    font-family: Helvetica, Arial, sans-serif;
-    background: $white;
-    font-size: 20px;
+    @include main-font(20px);
+    background: $background-color;
+    color: $primary-text-color;
   }
 }
