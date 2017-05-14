@@ -28,7 +28,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [require('babel-plugin-transform-object-rest-spread')],
+            plugins: [
+              require('babel-plugin-transform-object-rest-spread'),
+              require('babel-plugin-transform-class-properties'),
+            ],
           },
         },
       },
