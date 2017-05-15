@@ -13,7 +13,10 @@ import java.util.List;
 @RestController
 public class ChannelController {
 
-
+    /**
+     * Metoda obslugujaca zapytanie GET /channels
+     * @return lista kanałow w formacie json
+     */
     @RequestMapping("/channels")
     public List<Channel> getChannels() {
         List<Channel> channels = new ArrayList<Channel>();
