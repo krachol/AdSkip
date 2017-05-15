@@ -1,3 +1,47 @@
+@import "~styles/colors";
+@import "~styles/fonts";
+
 .vote-switch-container {
   display: block;
+}
+
+.caption,
+.buttons {
+  display: inline-block;
+}
+
+.caption {
+  font-size: $small-font-size;
+  margin-right: 10px;
+}
+
+.left-button,
+.right-button {
+  border: 1px solid $accent-color;
+  background: transparent;
+  margin: 0;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  outline: 0;
+  cursor: pointer;
+
+  &:hover {
+    background: $background-color;
+  }
+
+  &.active {
+    color: white;
+    background: $accent-color;
+  }
+}
+
+$border-radius: 5px;
+
+.left-button {
+  border-radius: $border-radius 0 0 $border-radius;
+  border-right: none;
+}
+
+.right-button {
+  border-radius: 0 $border-radius $border-radius 0;
 }

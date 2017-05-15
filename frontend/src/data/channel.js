@@ -21,7 +21,7 @@ export const ChannelPropTypes = {
   name: PropTypes.string,
   program: PropTypes.string,
   status: PropTypes.oneOf(Object.values(ChannelStatus)),
-  watched: PropTypes.bool.isRequired,
+  watched: PropTypes.bool,
   list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
