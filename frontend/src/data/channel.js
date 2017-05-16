@@ -21,7 +21,7 @@ export const ChannelPropTypes = {
   name: PropTypes.string,
   program: PropTypes.string,
   status: PropTypes.oneOf(Object.values(ChannelStatus)),
-  watched: PropTypes.bool.isRequired,
+  watched: PropTypes.bool,
   list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -79,10 +79,20 @@ export function findWatchedChannels(channels) {
   return channels.filter(channel => channel.watched);
 }
 
-export function setChannelWatchState(id, value, channels) {
+export function setChannelWatchState(id, watched, channels) {
   return channels.map(channel => {
     if (channel.id === id) {
-      return Object.assign(channel, { watched: value });
+      return Object.assign(channel, { watched });
+    }
+
+    return channel;
+  });
+}
+
+export function setChannelStatus(id, status, channels) {
+  return channels.map(channel => {
+    if (channel.id === id) {
+      return Object.assign(channel, { status });
     }
 
     return channel;

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Push from 'push.js';
 import {
   MOCK_CHANNELS,
+  ChannelStatus,
   findUnwatchedChannels,
   findWatchedChannels,
   setChannelWatchState,
+  setChannelStatus,
 } from '../data/channel';
 
 import ChannelList from '../components/ChannelList';
@@ -13,6 +16,24 @@ export default class ChannelContainer extends Component {
     super(props);
 
     this.state = { channels: MOCK_CHANNELS };
+  }
+
+  // Fake notification
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState(prevState => {
+        const channel = prevState.channels[0];
+        Push.create(`Kanał ${channel.name} zmienił status!`);
+
+        return {
+          channels: setChannelStatus(
+            channel.id,
+            ChannelStatus.ADS,
+            prevState.channels,
+          ),
+        };
+      });
+    }, 5000);
   }
 
   watchChannel = id => {
